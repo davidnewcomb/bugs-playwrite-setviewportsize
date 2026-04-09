@@ -32,7 +32,7 @@ public class PWTest {
 		;
 
 		// Works
-//		launchOptions = new BrowserType.LaunchOptions() //
+//		LaunchOptions launchOptions = new BrowserType.LaunchOptions() //
 //				.setHeadless(false) //
 //				.setSlowMo(50) //
 //		;
@@ -111,7 +111,7 @@ public class PWTest {
 		for (; i < 10; ++i) {
 			int w = new Random().nextInt(300, 1001);
 			int h = new Random().nextInt(300, 1001);
-			System.out.println("[" + i++ + "](" + w + "x" + h + ")");
+			System.out.println("[" + i + "](" + w + "x" + h + ")");
 			page.setViewportSize(w, h);
 		}
 
