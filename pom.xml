@@ -6,7 +6,7 @@
 
     <groupId>com.github.davidnewcomb</groupId>
     <artifactId>bugs-playwrite-setviewportsize</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -19,8 +19,7 @@
         <dependency>
             <groupId>com.microsoft.playwright</groupId>
             <artifactId>playwright</artifactId>
-            <version>1.58.0</version>
-            <!-- works <version>1.49.0</version> -->
+            <version>${playwright.version}</version>
         </dependency>
     </dependencies>
 
@@ -49,5 +48,29 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>pw158</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <playwright.version>1.58.0</playwright.version>
+            </properties>
+            <build>
+                <finalName>${project.artifactId}-pw158-${project.version}</finalName>
+            </build>
+        </profile>
+        <profile>
+            <id>pw149</id>
+            <properties>
+                <playwright.version>1.49.0</playwright.version>
+            </properties>
+            <build>
+                <finalName>${project.artifactId}-pw149-${project.version}</finalName>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
